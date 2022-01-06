@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Tracker</title>
+</head>
+<body>
+<h1>Item List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>#In Stock</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.price}"></td>
+        <td th:text="${item.count}"></td>
+        <td><a th:href="@{/edit/{id}(id=${item.id})}">edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${item.id})}">delete</a></td>
+    </tr>
+</table>
+<form action="/add" method="post">
+    <input type="text" name="name" placeholder="item name"/>
+    <input type="number" name="price" step="0.01" placeholder="item price"/>
+    <input type="number" name="count" placeholder="count in stock">
+    <input type="submit" value="add it!">
+</form>
+<form th:if="${editing != null}" action="#" th:action="@{/update/{id}(id=${editing.id})}" th:object="${editing}" method="post">
+    <input type="text" th:field="*{name}"/>
+    <input type="number" step="0.01" th:field="*{price}"/>
+    <input type="number" th:field="*{count}">
+    <input type="submit" value="update it!">
+</form>
+<a href="/export">Export Inventory List to CSV</a>
+</body>
+</html>
