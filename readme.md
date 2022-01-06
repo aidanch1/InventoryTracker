@@ -11,5 +11,5 @@ Java JDK 11 or higher: you can check which version of java you have by doing `ja
 1. press `ctrl+c` to terminate the server. (enter `y` when prompted)
 
 #### Misc: 
-I used an in memory database for convenience, so terminating the server will get rid of anything in the database. You can query the database by going to `localhost:8080/h2`. Log in by putting `jdbc:h2:mem:testdb` in "JDBC URL", the username is sa and the password is empty. There you can execute SQL queries.
+I used an in memory database for convenience, so terminating the server will get rid of anything in the database. You can query the database by going to `localhost:8080/h2`. Log in by putting `jdbc:h2:mem:testdb` in "JDBC URL", the username is sa and the password should be left blank. There you can execute SQL queries.
 
