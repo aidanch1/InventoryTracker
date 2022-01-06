@@ -5,7 +5,7 @@ Maven 3.2 or higher: you can check which version of maven you have by doing `mvn
 Java JDK 11 or higher: you can check which version of java you have by doing `java -version`
 ### Steps: 
 1. Either clone the project or download and extract the zip
-1. In cmd, navigate to the folder with the files. (directory should end with ShopifySu22)
+1. In cmd, navigate to the folder with the files. (directory should end with InventoryTracker)
 1. Type `mvn spring-boot:run`  
 1. visit `localhost:8080` on your web browser (if different, it should say in the console which port to go to).  
 1. press `ctrl+c` to terminate the server. (enter `y` when prompted)
